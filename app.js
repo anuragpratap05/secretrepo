@@ -35,7 +35,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-mongoose .connect("mongodb://127.0.0.1:27017/userDB");
+mongoose .connect("mongodb+srv://admin-anurag:Anurag123@cluster0.imao8.mongodb.net/userDB");
 
 const userschema= new mongoose.Schema( {
   email: String,
@@ -193,7 +193,7 @@ app.post("/login",function(req,res){
   });
 });
 
-app.listen(3000, function()
+app.listen(process.env.PORT ||  3000, function()
 {
   console.log("server started");
 });
